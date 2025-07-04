@@ -19,7 +19,6 @@
     "@headlessui/react": "^2.2.4",
     "@heroicons/react": "^2.2.0",
     "@hookform/resolvers": "^5.1.1",
-    "@netlify/plugin-nextjs": "^5.11.4",
     "@vercel/analytics": "^1.5.0",
     "clsx": "^2.1.1",
     "framer-motion": "^12.23.0",
@@ -34,6 +33,7 @@
   "devDependencies": {
     "@eslint/eslintrc": "^3",
     "@lhci/cli": "^0.12.0",
+    "@netlify/plugin-nextjs": "^5.11.4",
     "@next/bundle-analyzer": "^15.1.0",
     "@types/node": "^20",
     "@types/react": "^18",
