@@ -102,30 +102,115 @@ export function Contact() {
         onClose={() => setShowToast(false)}
       />
 
-      <section id="contact" className="py-16 bg-gradient-to-b from-qventis-gray-50 to-qventis-white">
+      <section id="contact" className="py-20 bg-gradient-to-b from-qventis-gray-50 to-qventis-white">
         <Container>
           
-          {/* Header Compact */}
+          {/* Header */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="text-center mb-12"
+            className="text-center max-w-4xl mx-auto mb-16"
           >
-            <h2 className="text-3xl lg:text-4xl font-display font-bold text-qventis-gray-900 mb-4">
-              Parlons de votre <span className="text-qventis-coral">projet</span>
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-qventis-coral/10 rounded-full mb-6">
+              <ChatBubbleLeftRightIcon className="w-4 h-4 text-qventis-coral" />
+              <span className="text-sm font-semibold text-qventis-coral">Contact</span>
+            </div>
+            
+            <h2 className="text-4xl lg:text-5xl font-display font-bold text-qventis-gray-900 mb-6">
+              Parlons de votre
+              <span className="text-qventis-coral"> projet</span>
             </h2>
+            
+            <p className="text-xl text-qventis-gray-600 leading-relaxed">
+              Transformons vos idées en solutions digitales concrètes. 
+              Contactez-nous pour un devis gratuit et sans engagement.
+            </p>
           </motion.div>
 
-          <div className="max-w-4xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-12 items-start">
             
-            {/* Formulaire Ultra-Compact */}
+            {/* Contact Info */}
             <motion.div
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="space-y-8"
+            >
+              <div>
+                <h3 className="text-2xl font-display font-bold text-qventis-gray-900 mb-6">
+                  Contactez-nous directement
+                </h3>
+                
+                <div className="space-y-4">
+                  <div className="flex items-center gap-4 p-4 bg-white rounded-xl shadow-sm border border-qventis-gray-100">
+                    <div className="w-12 h-12 bg-qventis-coral/10 rounded-xl flex items-center justify-center">
+                      <PhoneIcon className="w-6 h-6 text-qventis-coral" />
+                    </div>
+                    <div>
+                      <div className="font-semibold text-qventis-gray-900">Téléphone</div>
+                      <div className="text-qventis-gray-600">+33 1 23 45 67 89</div>
+                      <div className="text-sm text-qventis-coral">Lun-Ven 9h-18h</div>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-center gap-4 p-4 bg-white rounded-xl shadow-sm border border-qventis-gray-100">
+                    <div className="w-12 h-12 bg-qventis-coral/10 rounded-xl flex items-center justify-center">
+                      <EnvelopeIcon className="w-6 h-6 text-qventis-coral" />
+                    </div>
+                    <div>
+                      <div className="font-semibold text-qventis-gray-900">Email</div>
+                      <div className="text-qventis-gray-600">contact@qventis.fr</div>
+                      <div className="text-sm text-qventis-coral">Réponse sous 24h</div>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-center gap-4 p-4 bg-white rounded-xl shadow-sm border border-qventis-gray-100">
+                    <div className="w-12 h-12 bg-qventis-coral/10 rounded-xl flex items-center justify-center">
+                      <MapPinIcon className="w-6 h-6 text-qventis-coral" />
+                    </div>
+                    <div>
+                      <div className="font-semibold text-qventis-gray-900">Localisation</div>
+                      <div className="text-qventis-gray-600">Paris, France</div>
+                      <div className="text-sm text-qventis-coral">Interventions nationales</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="bg-gradient-to-r from-qventis-coral/5 to-qventis-coral/10 rounded-xl p-6">
+                <h4 className="font-semibold text-qventis-gray-900 mb-2">
+                  Pourquoi nous choisir ?
+                </h4>
+                <ul className="space-y-2 text-sm text-qventis-gray-600">
+                  <li className="flex items-center gap-2">
+                    <div className="w-1.5 h-1.5 bg-qventis-coral rounded-full"></div>
+                    Expertise technique reconnue
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <div className="w-1.5 h-1.5 bg-qventis-coral rounded-full"></div>
+                    Solutions sur-mesure
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <div className="w-1.5 h-1.5 bg-qventis-coral rounded-full"></div>
+                    Support réactif 24/7
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <div className="w-1.5 h-1.5 bg-qventis-coral rounded-full"></div>
+                    Tarifs transparents
+                  </li>
+                </ul>
+              </div>
+            </motion.div>
+            
+            {/* Formulaire */}
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.2 }}
             >
               <div className="bg-white rounded-2xl shadow-xl border border-qventis-gray-100 p-8">
                 
@@ -228,17 +313,18 @@ export function Contact() {
                   </div>
 
                   {/* Submit Button */}
-                  <div className="pt-2">
+                  <div className="pt-4">
                     <Button
                       type="submit"
+                      variant="coral"
                       size="lg"
                       disabled={isSubmitting}
-                      className="w-full px-6 py-3 bg-qventis-coral hover:bg-qventis-coral-dark text-white rounded-lg font-semibold transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                      className="w-full shadow-lg"
                     >
                       {isSubmitting ? (
                         <div className="flex items-center justify-center gap-2">
                           <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-                          <span>Envoi...</span>
+                          <span>Envoi en cours...</span>
                         </div>
                       ) : (
                         <div className="flex items-center justify-center gap-2">
@@ -247,30 +333,12 @@ export function Contact() {
                         </div>
                       )}
                     </Button>
+                    
+                    <p className="text-xs text-qventis-gray-500 text-center mt-3">
+                      Vos données sont protégées et ne seront jamais partagées
+                    </p>
                   </div>
                 </form>
-              </div>
-            </motion.div>
-
-            {/* Contact Info Minimaliste */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              viewport={{ once: true }}
-              className="mt-8 grid md:grid-cols-3 gap-4 text-center"
-            >
-              <div className="flex items-center justify-center gap-2 text-qventis-gray-600">
-                <PhoneIcon className="w-5 h-5 text-qventis-coral" />
-                <span className="text-sm">+33 1 23 45 67 89</span>
-              </div>
-              <div className="flex items-center justify-center gap-2 text-qventis-gray-600">
-                <EnvelopeIcon className="w-5 h-5 text-qventis-coral" />
-                <span className="text-sm">contact@qventis.fr</span>
-              </div>
-              <div className="flex items-center justify-center gap-2 text-qventis-gray-600">
-                <MapPinIcon className="w-5 h-5 text-qventis-coral" />
-                <span className="text-sm">Paris, France</span>
               </div>
             </motion.div>
 

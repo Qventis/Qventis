@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
+import { PromoBanner } from "@/components/ui/PromoBanner";
 import { motion, AnimatePresence } from "framer-motion";
 import { 
   SparklesIcon,
@@ -14,6 +15,7 @@ import {
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isPromoBannerVisible, setIsPromoBannerVisible] = useState(true);
 
   // Gérer le scroll pour l'effet UX
   useEffect(() => {
@@ -28,7 +30,7 @@ export function Navbar() {
     { name: "Accueil", href: "#hero", section: "hero" },
     { name: "Services", href: "#services", section: "services" },
     { name: "À propos", href: "#about", section: "about" },
-    { name: "Clients", href: "#customers", section: "customers" },
+    { name: "FAQ", href: "#faq", section: "faq" },
     { name: "Contact", href: "#contact", section: "contact" }
   ];
 
@@ -44,12 +46,23 @@ export function Navbar() {
 
   return (
     <>
+      {/* Bandeau promotionnel */}
+      <div className="fixed top-0 left-0 right-0 z-50">
+        <PromoBanner 
+          message="Offre spéciale : -20% sur tous nos services jusqu'au 31 juillet" 
+          ctaText="En savoir plus" 
+          ctaAction={() => scrollToSection('contact')}
+          isVisible={isPromoBannerVisible}
+          setIsVisible={setIsPromoBannerVisible}
+        />
+      </div>
+
       {/* Navbar fixe */}
       <motion.nav
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 bg-white backdrop-blur-sm border ${
+        className={`fixed top-0 left-0 right-0 z-40 transition-all duration-500 bg-white backdrop-blur-sm border ${isPromoBannerVisible ? 'mt-8' : 'mt-0'} ${
           // OPTION 1: Minimaliste avec bordure coral subtile (RECOMMANDÉE)
           isScrolled 
             ? 'bg-white/95 backdrop-blur-sm' 
@@ -77,7 +90,7 @@ export function Navbar() {
         }`}
       >
         <Container>
-          <div className="flex items-center justify-between h-20">
+          <div className="flex items-center justify-between h-16">
             
             {/* Logo Qventis */}
             <motion.div

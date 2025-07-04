@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Poppins } from "next/font/google";
 import "./globals.css";
 import { seoConfig, generateMetaTags } from "@/lib/seo";
+import { Analytics } from "@/components/Analytics";
 
 const inter = Inter({ 
   subsets: ["latin"],
@@ -98,23 +99,20 @@ export default function RootLayout({
       </head>
       <body className={`${inter.className} antialiased`}>
         {children}
+        <Analytics />
         
-        {/* Google Analytics (à configurer) */}
-        {process.env.NODE_ENV === 'production' && (
-          <>
-            <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID" />
-            <script
-              dangerouslySetInnerHTML={{
-                __html: `
-                  window.dataLayer = window.dataLayer || [];
-                  function gtag(){dataLayer.push(arguments);}
-                  gtag('js', new Date());
-                  gtag('config', 'GA_MEASUREMENT_ID');
-                `
-              }}
-            />
-          </>
-        )}
+        {/* Google Analytics */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-HTG5CBVHTD" />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-HTG5CBVHTD');
+            `
+          }}
+        />
       </body>
     </html>
   );
