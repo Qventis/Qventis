@@ -18,9 +18,13 @@ declare global {
 export const GA_TRACKING_ID = 'G-HTG5CBVHTD';
 
 // Fonction pour envoyer des événements à Google Analytics
-export const gtag = (...args: any[]) => {
+export const gtag = (
+  command: 'config' | 'event' | 'js',
+  targetId: string | Date,
+  config?: Record<string, any>
+) => {
   if (typeof window !== 'undefined' && window.gtag) {
-    window.gtag(...args);
+    window.gtag(command, targetId, config);
   }
 };
 
